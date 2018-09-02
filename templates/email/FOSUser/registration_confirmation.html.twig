@@ -1,0 +1,28 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% extends 'email_layout.html.twig' %}
+
+{% block email_preheader %}To finish activating your account please follow the instructions in this email.{% endblock %}
+
+{% block email_content %}
+    <p>Hello {{ user.username }},</p>
+    <p>To finish activating your account - please click the button below.</p>
+    <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+        <tbody>
+        <tr>
+            <td align="center">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr>
+                        <td> <a href="{{ confirmationUrl }}" target="_blank">Activate</a> </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p>This link can only be used once to validate your account.</p>
+    <p>Regards, the Symfony 4 Starter Team.</p>
+    <p style="font-size: 12px">If you’re having trouble clicking the "Activate" button, copy and paste the URL below into your web browser: <a href="{{ confirmationUrl }}" target="_blank">{{ confirmationUrl }}</a></p>
+{% endblock %}
