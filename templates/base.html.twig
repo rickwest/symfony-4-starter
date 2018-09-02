@@ -21,7 +21,7 @@
 
         <nav class="navbar navbar-expand-md navbar-light navbar-symfony-starter">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}{{ path('admin') }}{% else %}{{ path('homepage') }}{% endif %}">
                     Symfony 4 Starter
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
